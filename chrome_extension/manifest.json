@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "AI Hate Speech Moderator",
+  "version": "1.0",
+  "description": "Flags hate speech and cyberbullying in real-time.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["http://127.0.0.1:5000/*", "http://localhost:5000/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI Moderator"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
